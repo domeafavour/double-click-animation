@@ -3,13 +3,20 @@ import { createAnimations } from './createAnimations';
 export function createDoubleClickAnimation(
   duration = 300,
   options?: {
+    onStart?: () => void;
     onDoubleClick?: () => void;
     onCanceled?: () => void;
     onAnimate?: (progress: number) => void;
     max?: number;
   }
 ) {
-  const { onDoubleClick, onCanceled, max = 600, onAnimate } = options || {};
+  const {
+    onStart,
+    onDoubleClick,
+    onCanceled,
+    max = 600,
+    onAnimate,
+  } = options || {};
 
   let isFirstClick = false;
 
@@ -46,6 +53,7 @@ export function createDoubleClickAnimation(
       // from current to the end
       animation.reset({ fromValue: animation.getCurrent(), toValue: max });
     } else {
+      onStart?.();
       isFirstClick = true;
       willCancel = false;
       willComplete = false;
