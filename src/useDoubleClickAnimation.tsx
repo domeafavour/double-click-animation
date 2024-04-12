@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { createDoubleClickAnimation } from './lib/double-click-animation';
 
 export type Status = 'pending' | 'waiting' | 'canceled' | 'done';
@@ -10,7 +10,11 @@ export const statusText: Record<Status, string> = {
   done: 'Done, click to start again',
 };
 
-export function useDoubleClickAnimation() {
+export function useDoubleClickAnimation(onConfirm?: () => void) {
+  const latestOnConfirmRef = useRef(onConfirm);
+  useEffect(() => {
+    latestOnConfirmRef.current = onConfirm;
+  });
   const [progress, setProgress] = useState(0);
   const [status, setStatus] = useState<Status>('pending');
   const animation = useMemo(
@@ -23,6 +27,7 @@ export function useDoubleClickAnimation() {
         },
         onDoubleClick: () => {
           setStatus('done');
+          latestOnConfirmRef.current?.();
         },
       }),
     []
