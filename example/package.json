@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-use-double-click-confirm": "workspace:^"
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.23.4",

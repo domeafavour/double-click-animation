@@ -1,9 +1,19 @@
 import { Button } from "./components/Button";
 import { Progress } from "./components/Progress";
-import { statusText, useDoubleClickAnimation } from "./useDoubleClickAnimation";
+import {
+  type DoubleClickConfirmStatus,
+  useDoubleClickConfirm,
+} from "react-use-double-click-confirm";
+
+export const statusText: Record<DoubleClickConfirmStatus, string> = {
+  stale: "Waiting for the first click",
+  waiting: "Waiting for the second click",
+  cancelled: "Canceled",
+  confirmed: "Done, click to start again",
+};
 
 function App() {
-  const [{ progress, status }, animation] = useDoubleClickAnimation(() => {
+  const [{ progress, status }, animation] = useDoubleClickConfirm(() => {
     console.log("ok");
   });
 
