@@ -41,7 +41,9 @@ jobs:
           run_install: false
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-      - name: Build
+      - name: Build hook
+        run: pnpm build:hook
+      - name: Build example
         run: pnpm build:example
       - name: Setup Pages
         uses: actions/configure-pages@v3
