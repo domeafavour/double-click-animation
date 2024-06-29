@@ -1,10 +1,10 @@
-import { Button } from './components/Button';
-import { Progress } from './components/Progress';
-import { statusText, useDoubleClickAnimation } from './useDoubleClickAnimation';
+import { Button } from "./components/Button";
+import { Progress } from "./components/Progress";
+import { statusText, useDoubleClickAnimation } from "./useDoubleClickAnimation";
 
 function App() {
   const [{ progress, status }, animation] = useDoubleClickAnimation(() => {
-    console.log('ok');
+    console.log("ok");
   });
 
   return (
