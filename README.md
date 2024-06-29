@@ -9,7 +9,7 @@ For react
 ## Usage
 
 ```ts
-const [{ progress, status }, animation] = useDoubleClickAnimation(() => {
+const [{ progress, status }, animation] = useDoubleClickConfirm(() => {
   console.log('double click confirmed');
 });
 ```
