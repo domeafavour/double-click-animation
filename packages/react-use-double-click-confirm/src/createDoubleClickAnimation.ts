@@ -1,22 +1,16 @@
-import { createAnimations } from './createAnimations';
+import { createAnimations } from "./createAnimations";
 
 export function createDoubleClickAnimation(
   duration = 300,
   options?: {
     onStart?: () => void;
-    onDoubleClick?: () => void;
-    onCanceled?: () => void;
+    onConfirm?: () => void;
+    onCancel?: () => void;
     onAnimate?: (progress: number) => void;
     max?: number;
-  }
+  },
 ) {
-  const {
-    onStart,
-    onDoubleClick,
-    onCanceled,
-    max = 600,
-    onAnimate,
-  } = options || {};
+  const { onStart, onConfirm, onCancel, max = 600, onAnimate } = options || {};
 
   let isFirstClick = false;
 
@@ -38,9 +32,9 @@ export function createDoubleClickAnimation(
         // from current to 0
         animation.reset({ fromValue: animation.getCurrent(), toValue: 0 });
       } else if (willCancel) {
-        onCanceled?.();
+        onCancel?.();
       } else if (willComplete) {
-        onDoubleClick?.();
+        onConfirm?.();
       }
     },
   });

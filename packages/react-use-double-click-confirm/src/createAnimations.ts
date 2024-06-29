@@ -1,4 +1,4 @@
-import { getCurrentAnimationValue } from './getCurrentAnimationValue';
+import { getCurrentAnimationValue } from "./getCurrentAnimationValue";
 
 type AnimationOptions = {
   fromValue: number;
@@ -74,8 +74,8 @@ export function createAnimations(options: AnimationOptions) {
 
   function reset(
     newOptions: Partial<
-      Pick<AnimationOptions, 'duration' | 'fromValue' | 'toValue'>
-    >
+      Pick<AnimationOptions, "duration" | "fromValue" | "toValue">
+    >,
   ) {
     cancel();
     duration = newOptions.duration ?? duration;

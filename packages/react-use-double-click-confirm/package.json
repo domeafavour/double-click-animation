@@ -1,0 +1,34 @@
+{
+  "name": "react-use-double-click-confirm",
+  "version": "0.0.1",
+  "description": "Double click confirmation hook for React",
+  "main": ".dist/index.js",
+  "module": ".dist/index.mjs",
+  "types": ".dist/index.d.ts",
+  "type": "module",
+  "files": [
+    ".dist"
+  ],
+  "keywords": [
+    "react",
+    "hook"
+  ],
+  "author": "domeafavour",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": ">=16.8.0",
+    "react": ">=16.8.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/domeafavour/double-click-animation"
+  },
+  "scripts": {
+    "build": "tsup"
+  }
+}
