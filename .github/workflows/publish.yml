@@ -13,6 +13,10 @@ jobs:
     permissions:
       contents: read
       packages: write
+    # https://stackoverflow.com/questions/58139175/running-actions-in-another-directory
+    defaults: 
+      run:
+        working-directory: ./packages/react-use-double-click-confirm
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,8 +32,6 @@ jobs:
           run_install: false
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-      - name: cd to hook dir
-        run: cd ./packages/react-use-double-click-confirm
       - name: Build hook
         run: pnpm build
       - name: Publish to npmjs
