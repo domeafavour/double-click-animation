@@ -6,15 +6,15 @@
   "module": ".dist/index.mjs",
   "types": ".dist/index.d.ts",
   "type": "commonjs",
+  "files": [
+    ".dist"
+  ],
   "exports": {
     ".": {
       "import": "./.dist/index.mjs",
       "require": "./.dist/index.js"
     }
   },
-  "files": [
-    ".dist"
-  ],
   "keywords": [
     "react",
     "hook"
