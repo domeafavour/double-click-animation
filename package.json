@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev:example": "cd ./example && pnpm dev",
-    "build:example": "cd ./example && pnpm build"
+    "build:example": "cd ./example && pnpm build",
+    "build:hook": "cd ./packages/react-use-double-click-confirm && pnpm build"
   },
   "dependencies": {},
   "devDependencies": {}
